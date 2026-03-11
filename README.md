@@ -26,23 +26,25 @@ After setting up delegation, I connected to a delegated user account through Rem
 <img width="560" height="640" alt="Screenshot 2026-03-10 at 11 00 22 PM" src="https://github.com/user-attachments/assets/91f8fad8-7ece-422a-a3e6-023bcb87ea50" />
 
 
-5)To better organize computer objects within Active Directory, I built two new OUs named Workstations and Servers. All PCs and laptops were moved into the Workstations OU while the servers were placed into their own dedicated container. Structuring the directory this way makes large scale device management much more straightforward, allows group policies to be applied based on specific device roles, and keeps everything arranged in a clean and logical order.
+To better organize computer objects within Active Directory, I built two new OUs named Workstations and Servers. All PCs and laptops were moved into the Workstations OU while the servers were placed into their own dedicated container. Structuring the directory this way makes large scale device management much more straightforward, allows group policies to be applied based on specific device roles, and keeps everything arranged in a clean and logical order.
+<img width="554" height="621" alt="Screenshot 2026-03-10 at 11 00 57 PM" src="https://github.com/user-attachments/assets/2552db18-41ef-4cf8-9dce-5d5a5a19ba7f" />
+
+<img width="559" height="623" alt="Screenshot 2026-03-10 at 11 01 10 PM" src="https://github.com/user-attachments/assets/cda3fd6e-55cd-4790-8174-51f04ce27be6" />
 
 
+I took a closer look at the existing Group Policy Objects and made changes to the Default Domain Policy to tighten up password requirements across the domain, bumping the minimum password length from 7 to 11 characters. Enforcing a longer password requirement like this raises the security bar for every user account in the domain and reflects real world best practices for protecting credentials.
+<img width="563" height="631" alt="Screenshot 2026-03-10 at 11 01 27 PM" src="https://github.com/user-attachments/assets/3f041c19-e4b0-4021-95d4-ec260cf27840" />
 
+To prevent non-IT users from reaching the Control Panel, I created a brand new GPO and configured the appropriate restriction settings within it. Once the policy was set up, I linked it to the relevant OUs so it would only take effect for the intended group of users. Walking through this process showed me how precisely targeted policies can be used to enforce security boundaries and limit what users can do, which is a fundamental skill for managing permissions and maintaining tight control across an enterprise environment.
+<img width="560" height="621" alt="Screenshot 2026-03-10 at 11 01 57 PM" src="https://github.com/user-attachments/assets/125dff8d-e1e4-453e-8cca-c9093ecf9ac6" />
 
-6)I took a closer look at the existing Group Policy Objects and made changes to the Default Domain Policy to tighten up password requirements across the domain, bumping the minimum password length from 7 to 11 characters. Enforcing a longer password requirement like this raises the security bar for every user account in the domain and reflects real world best practices for protecting credentials.
+<img width="556" height="618" alt="Screenshot 2026-03-10 at 11 02 13 PM" src="https://github.com/user-attachments/assets/8e425e85-5790-4fb7-b9f7-a1745ad6fad6" />
 
-7)To prevent non-IT users from reaching the Control Panel, I created a brand new GPO and configured the appropriate restriction settings within it. Once the policy was set up, I linked it to the relevant OUs so it would only take effect for the intended group of users. Walking through this process showed me how precisely targeted policies can be used to enforce security boundaries and limit what users can do, which is a fundamental skill for managing permissions and maintaining tight control across an enterprise environment.
+To protect against unattended sessions being exploited, I set up automatic screen locking on all workstations and servers after 5 minutes of inactivity. This involved creating a new GPO, dialing in the security settings to enforce the timeout, and linking it to the root domain so every machine in the environment would be covered. Going through this process reinforced how something as straightforward as an inactivity timeout can meaningfully reduce the risk of unauthorized access and strengthen the overall security posture of a corporate environment.
+<img width="554" height="620" alt="Screenshot 2026-03-10 at 11 02 30 PM" src="https://github.com/user-attachments/assets/0ba21e62-bcf9-4688-b934-9b131850404c" />
 
-
-8)To protect against unattended sessions being exploited, I set up automatic screen locking on all workstations and servers after 5 minutes of inactivity. This involved creating a new GPO, dialing in the security settings to enforce the timeout, and linking it to the root domain so every machine in the environment would be covered. Going through this process reinforced how something as straightforward as an inactivity timeout can meaningfully reduce the risk of unauthorized access and strengthen the overall security posture of a corporate environment.
-
-
-
-
+<img width="558" height="621" alt="Screenshot 2026-03-10 at 11 02 41 PM" src="https://github.com/user-attachments/assets/ce8b5d4a-6d4e-4f51-a5c8-980c036dd92b" />
 
 Working through this lab gave me a much deeper understanding of what it actually takes to manage a domain environment securely and efficiently. From removing protected objects and handling user offboarding to assigning delegated permissions and verifying them through RDP, every task reinforced how deliberate and structured AD management needs to be. Organizing machines into dedicated OUs and rolling out Group Policies across the domain showed me firsthand how the right configurations can dramatically improve both security and day to day operations in an enterprise setting.
-
 
 
