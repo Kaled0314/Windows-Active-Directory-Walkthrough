@@ -40,6 +40,7 @@ To prevent non-IT users from reaching the Control Panel, I created a brand new G
 
 <img width="556" height="618" alt="Screenshot 2026-03-10 at 11 02 13 PM" src="https://github.com/user-attachments/assets/8e425e85-5790-4fb7-b9f7-a1745ad6fad6" />
 
+
 To protect against unattended sessions being exploited, I set up automatic screen locking on all workstations and servers after 5 minutes of inactivity. This involved creating a new GPO, dialing in the security settings to enforce the timeout, and linking it to the root domain so every machine in the environment would be covered. Going through this process reinforced how something as straightforward as an inactivity timeout can meaningfully reduce the risk of unauthorized access and strengthen the overall security posture of a corporate environment.
 <img width="554" height="620" alt="Screenshot 2026-03-10 at 11 02 30 PM" src="https://github.com/user-attachments/assets/0ba21e62-bcf9-4688-b934-9b131850404c" />
 
