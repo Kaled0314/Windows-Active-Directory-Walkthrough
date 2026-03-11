@@ -8,6 +8,7 @@ This project covers what I learned in TryHackMe's Active Directory Basics room. 
 - PowerShell AD Automation
 # Project Walkthrough
 In this task, I deleted an Organizational Unit (OU) by enabling advanced features in Active Directory and turning off the built-in accidental deletion protection. Completing this taught me how to carefully manage protected objects while ensuring critical accounts remain intact throughout the process.
+<img width="564" height="630" alt="Screenshot 2026-03-10 at 10 58 38 PM" src="https://github.com/user-attachments/assets/45d26f14-da05-42f6-a2bd-5619070a83c8" />
 
 
 I also got hands-on experience removing and deactivating user accounts within Active Directory, skills that play a key role in securely offboarding employees and keeping inactive accounts from becoming security risks. Properly executing these actions blocks unauthorized access and guarantees that network resources stay accessible only to verified, currently active users.
